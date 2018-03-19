@@ -1,0 +1,19 @@
+<template>
+  <div :class="$options.name">
+    <h2 v-if="$slots.title">
+      <slot name="title"></slot>
+    </h2>
+    <slot></slot>
+  </div>
+</template>
+
+<script>
+export default {
+  name: `ElementaElement`,
+  props: {
+    controls: {
+      type: Object,
+    },
+  },
+};
+</script>
