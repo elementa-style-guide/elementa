@@ -7,7 +7,7 @@ Elementa is a Vue.js component style guide, built with Vue for Vue projects.
 ## Quick start
 
 ```bash
-npm install --save-dev elementa-style-guide
+npm install --save-dev @elementa/core
 ```
 
 - [Create an Elementa configuration file](#configuration) in the root directory of your project.
@@ -82,8 +82,8 @@ Every file inside your `src` directory which ends with `.elm.vue` (this can be c
 <script>
 /* elementa-navigation: [components|hello-world|Hello World] */
 
-import ElementaDemo from 'elementa-style-guide/src/components/ElementaDemo.vue';
-import ElementaElement from 'elementa-style-guide/src/components/ElementaElement.vue';
+import ElementaDemo from '@elementa/core/src/components/ElementaDemo.vue';
+import ElementaElement from '@elementa/core/src/components/ElementaElement.vue';
 
 import HelloWorld from './HelloWorld.vue';
 
@@ -136,7 +136,7 @@ When defining a nested parent, keep in mind that you have to define the basic st
 
 ### Demo
 
-![Elementa Element with Controls](https://raw.githubusercontent.com/maoberlehner/elementa-style-guide/master/assets/elementa-element-controls-demo.gif)
+![Elementa Element with Controls](https://raw.githubusercontent.com/elementa-style-guide/core/master/assets/elementa-element-controls-demo.gif)
 
 ## Controls
 

@@ -1,13 +1,13 @@
 {
-  "name": "elementa-style-guide",
-  "version": "0.0.1-alpha.0",
+  "name": "@elementa/core",
+  "version": "0.0.1-alpha.1",
   "description": "Elementa is a Vue.js component style guide, built with Vue for Vue projects",
   "keywords": [
     "vue",
     "style guide"
   ],
   "author": "Markus Oberlehner",
-  "homepage": "https://github.com/maoberlehner/elementa-style-guide",
+  "homepage": "https://github.com/elementa-style-guide/core",
   "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve --open",
@@ -47,10 +47,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/maoberlehner/elementa-style-guide"
+    "url": "https://github.com/elementa-style-guide/core"
   },
   "bugs": {
-    "url": "https://github.com/maoberlehner/elementa-style-guide/issues"
+    "url": "https://github.com/elementa-style-guide/core/issues"
   },
   "browserslist": [
     "> 1%",
