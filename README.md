@@ -165,9 +165,7 @@ Here you can see a minimal implementation of an Elementa custom theme. If you wa
       <elementa-nav></elementa-nav>
     </div>
     <main class="MyElementaTheme__main">
-      <div class="MyElementaTheme__mainInner">
-        <slot></slot>
-      </div>
+      <slot></slot>
     </main>
   </div>
 </template>
