@@ -81,7 +81,11 @@ Every file inside your `src` directory which ends with `.elm.vue` (this can be c
 </template>
 
 <script>
-/* elementa-navigation: [components|hello-world|Hello World] */
+/* elementa-metadata
+parent: components
+slug: hello-world
+title: Hello World
+*/
 
 import ElementaDemo from '@elementa/core/src/components/ElementaDemo.vue';
 import ElementaElement from '@elementa/core/src/components/ElementaElement.vue';
@@ -120,20 +124,27 @@ export default {
 
 ### Metadata
 
-The `/* elementa-navigation: [components|hello-world|Hello World] */` string inside the `<script>` section of the component, defines the Elements metadata.
+Use a metadata block at the beginning of the `<script>` section of your component, to define to which `parent` the Element belongs, which `slug` to use for the URL and which `title` to use in the navigation. You must provide all three properties.
 
 ```js
-// Format
-/* elementa-navigation: [PARENT|SLUG|TITLE] */
-
 // Default
-/* elementa-navigation: [components|button|Button] */
+/* elementa-metadata
+parent: components
+slug: button
+title: Button
+*/
 
 // Nested parent
-/* elementa-navigation: [components.app|button|Button] */
+/* elementa-metadata
+parent: components.app
+slug: button
+title: Button
+*/
 ```
 
-When defining a nested parent, keep in mind that you have to define the basic structure in the `navigationSchema` property of the configuration.
+Do not forget to add the new parent item to your `navigationSchema` property in the configuration when defining a new nested parent in a metadata block.
+
+You have to restart Elementa after modifying the metadata of an Element for the changes to take effect.
 
 ### Demo
 

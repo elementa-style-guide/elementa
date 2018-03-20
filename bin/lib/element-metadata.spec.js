@@ -13,7 +13,11 @@ describe(`elementMetadata()`, () => {
     fs.readFileSync.mockReturnValue(`
       <template><div></div></template>
       <script>
-      /* elementa-navigation: [baz.qux|foo-bar|Foo Bar] */
+      /* elementa-metadata
+      parent: baz.qux
+      slug: foo-bar
+      title: Foo Bar
+      */
       </script>
     `);
 
