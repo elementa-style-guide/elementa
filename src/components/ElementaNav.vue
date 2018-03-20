@@ -1,6 +1,17 @@
 <template>
   <nav :class="$options.name">
-    <elementa-nav-list :items="items"></elementa-nav-list>
+    <button
+      :class="`${$options.name}__menuToggle`"
+      aria-label="Open navigation"
+      @click="active = !active"
+    >
+    </button>
+    <div :class="{
+      [`${$options.name}__list`]: true,
+      'is-active': active,
+    }">
+      <elementa-nav-list :items="items"></elementa-nav-list>
+    </div>
   </nav>
 </template>
 
@@ -16,6 +27,7 @@ export default {
   },
   data() {
     return {
+      active: false,
       items,
     };
   },

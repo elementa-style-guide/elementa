@@ -3,12 +3,16 @@
     <li
       v-for="(item, index) in items"
       :key="index"
-      :class="`${$options.name}__item`"
+      :class="{
+        [`${$options.name}__item`]: true,
+        [`${$options.name}__item--subTitleItem`]: !item.route,
+      }"
     >
       <router-link
         v-if="item.route"
         :class="`${$options.name}__title ${$options.name}__title--link`"
         :to="item.route"
+        active-class="is-active"
       >
         {{ item.title }}
       </router-link>
