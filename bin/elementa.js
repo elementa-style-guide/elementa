@@ -29,17 +29,20 @@ fs.writeFileSync(
   router,
   { encoding: `utf8` },
 );
+console.log(`router.json created`);
 
 fs.writeFileSync(
   path.resolve(__dirname, `..`, `src`, `navigation.json`),
   JSON.stringify(navigation),
   { encoding: `utf8` },
 );
+console.log(`navigation.json created`);
 
 process.env.ELEMENTA_PROJECT_CWD = process.cwd();
 
-const devServer = spawn(`npm`, [`run`, `--prefix`, `${__dirname}/..`, `serve`]);
-
-devServer.stdout.on(`data`, x => console.log(x.toString()));
-devServer.stderr.on(`data`, x => console.log(x.toString()));
+spawn(
+  `npm`,
+  [`run`, `--prefix`, `${__dirname}/..`, `serve`],
+  { stdio: `inherit` },
+);
 
