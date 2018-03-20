@@ -56,8 +56,8 @@ Elements are the pages of your style guide. Every Element describes one, or a gr
 src
 ├── App.vue
 └── components
-    ├── HelloWorld.elm.vue
-    └── HelloWorld.vue
+    ├── AppButton.elm.vue
+    └── AppButton.vue
 ```
 
 Every file inside your `src` directory which ends with `.elm.vue` (this can be changed in the configuration) is automatically detected as an Element and added to the style guide.
@@ -65,17 +65,18 @@ Every file inside your `src` directory which ends with `.elm.vue` (this can be c
 ```html
 <template>
   <elementa-element>
-    <template slot="title">Hello World</template>
+    <template slot="title">Button</template>
 
-    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-    eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+    <p>Bootstrap includes several predefined button styles, each serving its
+    own semantic purpose, with a few extras thrown in for more control.</p>
 
     <elementa-demo :controls="controls">
-      <hello-world
-        :title="controls.title.value"
-        :status="controls.status.value"
+      <app-button
+        :size="controls.size.value"
+        :type="controls.type.value"
       >
-      </hello-world>
+        {{ controls.text.value }}
+      </app-button>
     </elementa-demo>
   </elementa-element>
 </template>
@@ -83,37 +84,43 @@ Every file inside your `src` directory which ends with `.elm.vue` (this can be c
 <script>
 /* elementa-metadata
 parent: components
-slug: hello-world
-title: Hello World
+slug: button
+title: Button
 */
 
-import ElementaDemo from '@elementa/core/src/components/ElementaDemo.vue';
-import ElementaElement from '@elementa/core/src/components/ElementaElement.vue';
+import AppButton from './AppButton.vue';
 
-import HelloWorld from './HelloWorld.vue';
+import ElementaDemo from 'elementa-style-guide/src/components/ElementaDemo.vue';
+import ElementaElement from 'elementa-style-guide/src/components/ElementaElement.vue';
 
 export default {
-  name: 'HelloWorldElm',
+  name: 'Button',
   components: {
+    AppButton,
     ElementaDemo,
     ElementaElement,
-    HelloWorld,
   },
   data() {
     return {
       // Controls make it possible to manipulate the data
       // of your component directly in the style guide.
       controls: {
-        title: {
-          label: 'Title',
+        text: {
+          label: 'Text',
           type: 'text',
-          value: 'Hello',
+          value: 'Button',
         },
-        status: {
-          label: 'Status',
+        size: {
+          label: 'Size',
           type: 'select',
-          value: 'success',
-          options: ['success', 'error'],
+          value: 'm',
+          options: ['m', 'l', 'xl'],
+        },
+        type: {
+          label: 'Type',
+          type: 'select',
+          value: 'primary',
+          options: ['primary', 'success', 'danger'],
         },
       },
     };
