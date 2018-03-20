@@ -1,6 +1,7 @@
+const { defaultsDeep } = require(`lodash`);
+const path = require(`path`);
 const webpack = require(`webpack`);
 const webpackMerge = require(`webpack-merge`);
-const { defaultsDeep } = require(`lodash`);
 
 let userConfig;
 
@@ -18,7 +19,10 @@ try {
   userConfig = {};
 }
 
-const theme = userConfig.theme || THEME_DEFAULT_PATH;
+const theme = userConfig.theme
+  ? path.resolve(process.env.ELEMENTA_PROJECT_CWD, userConfig.theme)
+  : THEME_DEFAULT_PATH;
+
 const elementaWebpackConfig = {
   output: {
     chunkFilename: `[name].[chunkhash].js`,
