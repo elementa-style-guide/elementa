@@ -176,6 +176,7 @@ export default {
 
   &__controlCenter {
     padding: $card-spacer-y $card-spacer-x;
+    padding-bottom: $card-spacer-x;
     background-color: $card-cap-bg;
     border-top: $card-border-width solid $card-border-color;
 
