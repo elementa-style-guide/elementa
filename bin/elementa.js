@@ -8,8 +8,9 @@ const createNavigationUtil = require(`./lib/create-navigation`);
 const createRouterUtil = require(`./lib/create-router`);
 const elementTreeUtil = require(`./lib/element-tree`);
 
-// eslint-disable-next-line import/no-dynamic-require
-const config = require(`${process.cwd()}/elementa.config.js`);
+process.env.ELEMENTA_PROJECT_CWD = process.cwd();
+
+const config = require(`../config`);
 
 config.paths.src = config.paths.src.replace(`<rootDir>`, config.paths.root);
 
@@ -29,6 +30,7 @@ fs.writeFileSync(
   router,
   { encoding: `utf8` },
 );
+// eslint-disable-next-line no-console
 console.log(`router.json created`);
 
 fs.writeFileSync(
@@ -36,9 +38,8 @@ fs.writeFileSync(
   JSON.stringify(navigation),
   { encoding: `utf8` },
 );
+// eslint-disable-next-line no-console
 console.log(`navigation.json created`);
-
-process.env.ELEMENTA_PROJECT_CWD = process.cwd();
 
 spawn(
   `npm`,

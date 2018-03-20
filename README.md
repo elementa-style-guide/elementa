@@ -10,7 +10,6 @@ Elementa is a Vue.js component style guide, built with Vue for Vue projects.
 npm install --save-dev @elementa/core
 ```
 
-- [Create an Elementa configuration file](#configuration) in the root directory of your project.
 - [Create an Elementa Element file](#elements).
 - Run `npx elementa` to start the Elementa development server.
 
@@ -18,7 +17,7 @@ Live reloading does not work when adding new Element files, restart Elementa aft
 
 ## Configuration
 
-**Warning:** currently there is no default configuration, you must create an `elementa.config.js` file, containing all of the configuration options you can see in the example, in the root directory of your project.
+If you want to change the default configuration, you can create an `elementa.config.js` file in the root directory of your project.
 
 ```js
 // elementa.config.js
@@ -26,10 +25,6 @@ module.exports = {
   // Add custom webpack configuration.
   // See: https://github.com/vuejs/vue-cli/blob/dev/docs/webpack.md
   configureWebpack: {},
-  paths: {
-    root: process.cwd(),
-    src: '<rootDir>/src',
-  },
   elementSuffix: 'elm',
   // Define your navigation schema.
   navigationSchema: {
@@ -43,6 +38,12 @@ module.exports = {
         },
       },
     },
+  },
+  paths: {
+    root: process.cwd(),
+    // The `<rootDir>` placeholder is automatically
+    // replaced by the path you've specified above.
+    src: '<rootDir>/src',
   },
 };
 ```
