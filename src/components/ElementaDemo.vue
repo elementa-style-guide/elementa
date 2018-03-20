@@ -9,7 +9,9 @@
     </div>
 
     <div :class="`${$options.name}__controlCenter`">
-      <h4>Control Center</h4>
+      <h4 :class="`${$options.name}__controlCenterTitle`">
+        Control Center
+      </h4>
       <elementa-control-center :controls="controls"></elementa-control-center>
     </div>
   </div>

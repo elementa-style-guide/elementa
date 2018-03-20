@@ -1,9 +1,7 @@
 <template>
   <div :class="$options.name">
     <div :class="`${$options.name}__sidebar`">
-      <slot name="nav">
-        <elementa-nav></elementa-nav>
-      </slot>
+      <elementa-nav></elementa-nav>
     </div>
     <main :class="`${$options.name}__main`">
       <div :class="`${$options.name}__mainInner`">
@@ -17,8 +15,7 @@
 import ElementaNav from './ElementaNav.vue';
 
 export default {
-  // TODO rename to `theme`
-  name: `ElementaLayout`,
+  name: `ElementaTheme`,
   components: {
     ElementaNav,
   },
@@ -31,7 +28,7 @@ export default {
 @import '~bootstrap/scss/mixins';
 @import '~bootstrap/scss/reboot';
 
-.ElementaLayout {
+.ElementaTheme {
   display: flex;
   flex-direction: column;
 
@@ -64,7 +61,9 @@ export default {
   }
 }
 
-// TODO file
+/**
+ * ElementaControl
+ */
 .ElementaControl {
   display: flex;
   flex-direction: column;
@@ -108,6 +107,9 @@ export default {
   }
 }
 
+/**
+ * ElementaControlCenter
+ */
 .ElementaControlCenter {
   margin: 0;
   padding: 0;
@@ -120,6 +122,9 @@ export default {
   }
 }
 
+/**
+ * ElementaDemo
+ */
 .ElementaDemo {
   position: relative;
   display: flex;

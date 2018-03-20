@@ -145,7 +145,48 @@ Currently only Controls of type `text` and `select` are supported, more to come.
 
 ## Theming
 
-Coming soon!
+Elementa themes are basically regular Vue components which contain all the CSS styles of the style guide app. If you want to change the layout or the style of your style guide, you can create your own Elementa theme and tell Elementa, in the `elementa.config.js` configuration file, to use your custom theme instead of the default one.
+
+```js
+// elementa.config.js
+module.exports = {
+  theme: `./src/components/MyElementaTheme.vue`,
+};
+```
+
+### Theme template
+
+Here you can see a minimal implementation of an Elementa custom theme. If you want to only make minor changes to the default theme, you can also copy [the default theme](https://github.com/elementa-style-guide/core/blob/master/src/components/ElementaTheme.vue) and work your way from there.
+
+```html
+<template>
+  <div class="MyElementaTheme">
+    <div class="MyElementaTheme__sidebar">
+      <elementa-nav></elementa-nav>
+    </div>
+    <main class="MyElementaTheme__main">
+      <div class="MyElementaTheme__mainInner">
+        <slot></slot>
+      </div>
+    </main>
+  </div>
+</template>
+
+<script>
+import ElementaNav from '@elementa/core/src/components/ElementaNav.vue';
+
+export default {
+  name: `MyElementaTheme`,
+  components: {
+    ElementaNav,
+  },
+};
+</script>
+
+<style>
+/* This is the place for your custom styles. */
+</style>
+```
 
 ## About
 

@@ -1,19 +1,18 @@
 <template>
   <div id="app">
-    <elementa-layout>
+    <elementa-theme>
       <router-view></router-view>
-    </elementa-layout>
+    </elementa-theme>
   </div>
 </template>
 
 <script>
-// TODO change this path via webpack define?
-import ElementaLayout from './components/ElementaLayout.vue';
+import ElementaTheme from 'ELEMENTA_THEME';
 
 export default {
   name: `ElementaRoot`,
   components: {
-    ElementaLayout,
+    ElementaTheme,
   },
 };
 </script>
