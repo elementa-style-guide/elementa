@@ -90,8 +90,8 @@ title: Button
 
 import AppButton from './AppButton.vue';
 
-import ElementaDemo from 'elementa-style-guide/src/components/ElementaDemo.vue';
-import ElementaElement from 'elementa-style-guide/src/components/ElementaElement.vue';
+import ElementaDemo from '@elementa/core/src/components/ElementaDemo.vue';
+import ElementaElement from '@elementa/core/src/components/ElementaElement.vue';
 
 export default {
   name: 'Button',
