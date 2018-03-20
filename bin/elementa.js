@@ -31,7 +31,7 @@ fs.writeFileSync(
   { encoding: `utf8` },
 );
 // eslint-disable-next-line no-console
-console.log(`router.json created`);
+console.log(`router.js created`);
 
 fs.writeFileSync(
   path.resolve(__dirname, `..`, `src`, `navigation.json`),
