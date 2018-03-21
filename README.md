@@ -25,7 +25,7 @@ module.exports = {
   // Add custom webpack configuration.
   // See: https://github.com/vuejs/vue-cli/blob/dev/docs/webpack.md
   configureWebpack: {},
-  elementSuffix: 'elm',
+  elementSuffix: 'ele',
   // Define your navigation schema.
   navigationSchema: {
     components: {
@@ -56,11 +56,11 @@ Elements are the pages of your style guide. Every Element describes one, or a gr
 src
 ├── App.vue
 └── components
-    ├── AppButton.elm.vue
+    ├── AppButton.ele.vue
     └── AppButton.vue
 ```
 
-Every file inside your `src` directory which ends with `.elm.vue` (this can be changed in the configuration) is automatically detected as an Element and added to the style guide.
+Every file inside your `src` directory which ends with `.ele.vue` (this can be changed in the configuration) is automatically detected as an Element and added to the style guide.
 
 ```html
 <template>

@@ -37,7 +37,7 @@ const elementaWebpackConfig = {
 
 const config = {
   configureWebpack: {},
-  elementSuffix: `elm`,
+  elementSuffix: `ele`,
   navigationSchema: {
     components: {
       title: `Components`,

@@ -21,7 +21,7 @@ describe(`elementMetadata()`, () => {
       </script>
     `);
 
-    const elementPath = `/foo/bar.elm.vue`;
+    const elementPath = `/foo/bar.ele.vue`;
     const expectedResult = {
       key: `foo-bar`,
       parent: `baz.qux`,
