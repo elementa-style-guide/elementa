@@ -7,6 +7,7 @@
 </template>
 
 <script>
+// eslint-disable-next-line import/no-unresolved, import/extensions
 import ElementaTheme from 'ELEMENTA_THEME';
 
 export default {

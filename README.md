@@ -88,10 +88,10 @@ slug: button
 title: Button
 */
 
-import AppButton from './AppButton.vue';
-
 import ElementaDemo from '@elementa/core/src/components/ElementaDemo.vue';
 import ElementaElement from '@elementa/core/src/components/ElementaElement.vue';
+
+import AppButton from './AppButton.vue';
 
 export default {
   name: 'Button',
@@ -131,7 +131,7 @@ export default {
 
 ### Metadata
 
-Use a metadata block at the beginning of the `<script>` section of your component, to define to which `parent` the Element belongs, which `slug` to use for the URL and which `title` to use in the navigation. You must provide all three properties.
+Use a metadata block at the beginning of the JavaScript section of your component, to define to which `parent` the Element belongs, which `slug` to use for the URL and which `title` to use in the navigation. You must provide all three properties.
 
 ```js
 // Default
@@ -168,7 +168,7 @@ Elementa themes are basically regular Vue components which contain all the CSS s
 ```js
 // elementa.config.js
 module.exports = {
-  theme: `./src/components/MyElementaTheme.vue`,
+  theme: './src/components/MyElementaTheme.vue',
 };
 ```
 
@@ -192,7 +192,7 @@ Here you can see a minimal implementation of an Elementa custom theme. If you wa
 import ElementaNav from '@elementa/core/src/components/ElementaNav.vue';
 
 export default {
-  name: `MyElementaTheme`,
+  name: 'MyElementaTheme',
   components: {
     ElementaNav,
   },

@@ -1,0 +1,9 @@
+{
+  "plugins": ["script-tags"],
+  "extends": ".eslintrc",
+  "rules": {
+    "eol-last": 0,
+    "import/no-unresolved": false,
+    "quotes": [2, "single", { "avoidEscape": true }]
+  }
+}
