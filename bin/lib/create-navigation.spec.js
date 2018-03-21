@@ -1,17 +1,3 @@
-/*
-{
-  components: {
-    title: 'Components', // if no route, than it can be toggled / no link
-    children: { // array?
-      button: {
-        title: 'Button',
-        route: { name: 'components-button' },
-      }
-    }
-  }
-}
-*/
-
 const createNavigation = require(`./create-navigation`);
 
 describe(`createNavigation()`, () => {

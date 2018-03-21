@@ -1,32 +1,3 @@
-
-// elementTree
-// {
-//   AppButton{ID}: {
-//     parent: 'components.atoms',
-//     path: /root/src/components/atoms/AppButton.vue,
-//     route: {
-//       name: 'cmp-atoms-button',
-//       path: '/cmp/atoms/button',
-//     },
-//     title: 'Button',
-//   }
-// }
-/*
-const expectedResult = {
-      components: {
-        children: {
-          foo: {
-            route: {
-              name: `components-foo`,
-            },
-            title: `Foo`,
-          },
-        },
-        title: `Components`,
-      },
-    };
-*/
-
 module.exports = function createNavigation({ elementTree, schema }) {
   return Object.keys(elementTree).reduce((prev, elementKey) => {
     const {
