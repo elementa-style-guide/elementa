@@ -1,3 +1,5 @@
+const { cloneDeep } = require(`lodash`);
+
 module.exports = function createNavigation({ elementTree, schema }) {
   return Object.keys(elementTree).reduce((prev, elementKey) => {
     const {
@@ -26,5 +28,5 @@ module.exports = function createNavigation({ elementTree, schema }) {
     }, prev);
 
     return prev;
-  }, Object.assign({}, schema)); // todo use lodash
+  }, cloneDeep(schema));
 };
