@@ -1,12 +1,12 @@
 const glob = require(`glob`);
 
-const elements = require(`./elements`);
+const elementPaths = require(`./element-paths`);
 
 jest.mock(`glob`, () => ({ sync: jest.fn() }));
 
-describe(`elements()`, () => {
+describe(`elementPaths()`, () => {
   test(`It should be a function.`, () => {
-    expect(typeof elements).toBe(`function`);
+    expect(typeof elementPaths).toBe(`function`);
   });
 
   test(`It should return an array of absolute Elementa element file paths.`, () => {
@@ -21,6 +21,6 @@ describe(`elements()`, () => {
       `/root/src/foo/bar/baz.elem.vue`,
     ];
 
-    expect(elements({ src: `/root/src` })).toEqual(expectedResult);
+    expect(elementPaths({ src: `/root/src` })).toEqual(expectedResult);
   });
 });
