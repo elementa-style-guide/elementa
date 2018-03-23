@@ -38,30 +38,19 @@ export default {
     flex-direction: row;
   }
 
-  &::before {
-    position: fixed;
-    left: 0;
-    width: 100%;
-    height: 0.25em;
-    background-color: $theme-color;
-    z-index: 900;
-    content: '';
-
-    @include media-breakpoint-up('md') {
-      width: 0.5em;
-      height: 100%;
-    }
-  }
-
   &__sidebar {
     padding: 2em;
     background-color: #F4F5F7;
+    border: 0 solid $theme-color;
+    border-top-width: 0.25em;
 
     @include media-breakpoint-up('md') {
       width: 16em;
       position: sticky;
       top: 0;
       height: 100vh;
+      border-top-width: 0;
+      border-left-width: 0.5em;
       align-self: flex-start;
       overflow: auto;
     }
@@ -273,7 +262,7 @@ export default {
 
   &__title {
     display: block;
-    padding: 0.5em;
+    padding: 0.5rem;
     line-height: 1.2;
 
     &--link {
