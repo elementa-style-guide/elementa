@@ -29,7 +29,7 @@ export default {
 @import '~bootstrap/scss/reboot';
 
 .ElementaTheme {
-  $theme-color: #00acc1;
+  $theme-color: #FFA726;
 
   display: flex;
   flex-direction: column;
@@ -249,7 +249,7 @@ export default {
  * ElementaNavList
  */
 .ElementaNavList {
-  $text-color: #5E6C84;
+  $text-color: #212529;
 
   padding-left: 0;
   list-style-type: none;
@@ -291,7 +291,7 @@ export default {
       &:focus,
       &.is-active {
         text-decoration: none;
-        background-color: lighten($text-color, 47%);
+        background-color: lighten($text-color, 75%);
       }
     }
 
