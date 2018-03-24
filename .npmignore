@@ -2,7 +2,7 @@ assets
 coverage
 
 .editorconfig
-.eslintrc
+.eslintrc*
 *.spec.js
 *.tgz
 
