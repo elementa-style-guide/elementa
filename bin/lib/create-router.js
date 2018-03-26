@@ -6,7 +6,7 @@ module.exports = function createRouter({ elementTree }) {
     const { path, route } = elementTree[key];
 
     // eslint-disable-next-line no-param-reassign
-    prev += `{component: () => import(\`${path}\`),name: \`${route.name}\`,path: \`/${route.path}\`},`;
+    prev += `{component: () => import(/* webpackChunkName: "${route.name}" */ \`${path}\`),name: \`${route.name}\`,path: \`/${route.path}\`},`;
 
     return prev;
   }, ``);
