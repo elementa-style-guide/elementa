@@ -1,7 +1,7 @@
 const { cloneDeep } = require(`lodash`);
 
 module.exports = function createNavigation({ elementTree, schema }) {
-  return Object.keys(elementTree).reduce((prev, elementKey) => {
+  return Object.keys(elementTree).reduce((x, elementKey) => {
     const {
       key,
       parent,
@@ -9,8 +9,8 @@ module.exports = function createNavigation({ elementTree, schema }) {
       title,
     } = elementTree[elementKey];
 
-    parent.split(`.`).reduce((_, parentKey, index, array) => {
-      const parentItem = _[parentKey];
+    parent.split(`.`).reduce((y, parentKey, index, array) => {
+      const parentItem = y[parentKey];
 
       if (!parentItem.children) {
         parentItem.children = {};
@@ -25,8 +25,8 @@ module.exports = function createNavigation({ elementTree, schema }) {
       }
 
       return parentItem.children;
-    }, prev);
+    }, x);
 
-    return prev;
+    return x;
   }, cloneDeep(schema));
 };
