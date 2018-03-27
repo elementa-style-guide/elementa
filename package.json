@@ -37,7 +37,7 @@
     "@avalanche/eslint-config": "^2.0.0",
     "@vue/cli-plugin-eslint": "^3.0.0-beta.6",
     "@vue/cli-plugin-unit-jest": "^3.0.0-beta.6",
-    "@vue/test-utils": "^1.0.0-beta.12",
+    "@vue/test-utils": "^1.0.0-beta.13",
     "babel-eslint": "^8.2.2",
     "babel-jest": "^22.4.3",
     "eslint-plugin-import": "^2.9.0",
