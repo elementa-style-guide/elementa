@@ -6,11 +6,6 @@ Vue.use(Router);
 export default new Router({
   mode: `history`,
   routes: [
-    {
-      component: () => import(`./components/ElementaRoot.vue`),
-      name: `home`,
-      path: `/`,
-    },
     ## routes-placeholder ##
   ],
   scrollBehavior(to, from, savedPosition) {

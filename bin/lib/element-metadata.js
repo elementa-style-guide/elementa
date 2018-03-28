@@ -5,7 +5,11 @@ module.exports = function elementMetadata({ elementPath }) {
   const yaml = fs.readFileSync(elementPath, { encoding: `utf8` })
     .match(/\/\* elementa-metadata(.*?)\*\//s)[1];
 
-  const { parent, slug: key, title } = yamlJs.parse(yaml);
+  const {
+    parent,
+    slug = ``,
+    title,
+  } = yamlJs.parse(yaml);
 
-  return { key, parent, title };
+  return { slug, parent, title };
 };

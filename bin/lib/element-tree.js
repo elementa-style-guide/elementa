@@ -1,24 +1,20 @@
-const path = require(`path`);
-
+const dashify = require(`dashify`);
 const elementMetadata = require(`./element-metadata`);
 
 module.exports = function elementTree({ elementPaths }) {
-  return elementPaths.reduce((prev, elementPath, index) => {
-    const { name } = path.parse(path.parse(elementPath).name);
-    const { key, parent, title } = elementMetadata({ elementPath });
+  return elementPaths.map((elementPath) => {
+    const { parent = ``, slug, title } = elementMetadata({ elementPath });
+    const parents = parent.split(`.`).filter(x => x);
 
-    // eslint-disable-next-line no-param-reassign
-    prev[`${name}${index + 1}`] = {
-      key,
+    return {
       parent,
       path: elementPath,
       route: {
-        name: `${parent.replace(/\./g, `-`)}-${key}`,
-        path: `${parent.replace(/\./g, `/`)}/${key}`,
+        name: [...parents, dashify(title)].join(`-`),
+        path: [...parents, slug].join(`/`),
       },
+      slug,
       title,
     };
-
-    return prev;
-  }, {});
+  });
 };

@@ -23,8 +23,27 @@ describe(`elementMetadata()`, () => {
 
     const elementPath = `/foo/bar.ele.vue`;
     const expectedResult = {
-      key: `foo-bar`,
       parent: `baz.qux`,
+      slug: `foo-bar`,
+      title: `Foo Bar`,
+    };
+
+    expect(elementMetadata({ elementPath })).toEqual(expectedResult);
+  });
+
+  test(`It should parse and return element metadata with missing properties.`, () => {
+    fs.readFileSync.mockReturnValue(`
+      <template><div></div></template>
+      <script>
+      /* elementa-metadata
+      title: Foo Bar
+      */
+      </script>
+    `);
+
+    const elementPath = `/foo/bar.ele.vue`;
+    const expectedResult = {
+      slug: ``,
       title: `Foo Bar`,
     };
 

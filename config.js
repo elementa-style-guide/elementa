@@ -1,4 +1,4 @@
-const { defaultsDeep } = require(`lodash`);
+const { assign } = require(`lodash`);
 const path = require(`path`);
 const webpack = require(`webpack`);
 const webpackMerge = require(`webpack-merge`);
@@ -35,21 +35,21 @@ const elementaWebpackConfig = {
   ],
 };
 
-const config = {
+const config = assign({}, {
   configureWebpack: {},
   elementSuffix: `ele`,
-  navigationSchema: {
-    components: {
+  navigationSchema: [
+    {
+      slug: `components`,
       title: `Components`,
     },
-  },
+  ],
   paths: {
     root: process.cwd(),
     src: `<rootDir>/src`,
   },
-};
+}, userConfig);
 
-defaultsDeep(config, userConfig);
 config.configureWebpack = webpackMerge(elementaWebpackConfig, userConfig.configureWebpack);
 
 module.exports = config;

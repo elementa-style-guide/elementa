@@ -27,18 +27,20 @@ module.exports = {
   configureWebpack: {},
   elementSuffix: 'ele',
   // Define your navigation schema.
-  navigationSchema: {
-    components: {
+  navigationSchema: [
+    {
+      slug: 'components',
       title: 'Components',
-      children: {
+      children: [
         // If you want to add an element as child of `App`
         // you must define its parent as `components.app`.
-        app: {
+        {
+          slug: 'app',
           title: 'App',
         },
-      },
+      ],
     },
-  },
+  ],
   paths: {
     root: process.cwd(),
     // The `<rootDir>` placeholder is automatically
@@ -131,7 +133,7 @@ export default {
 
 ### Metadata
 
-Use a metadata block at the beginning of the JavaScript section of your component, to define to which `parent` the Element belongs, which `slug` to use for the URL and which `title` to use in the navigation. You must provide all three properties.
+Use a metadata block at the beginning of the JavaScript section of your component, to define to which `parent` the Element belongs, which `slug` to use for the URL and which `title` to use in the navigation. You must provide all three properties. If you don't define a slug, the Element is used as homepage.
 
 ```js
 // Default
@@ -146,6 +148,11 @@ title: Button
 parent: components.app
 slug: button
 title: Button
+*/
+
+// Homepage
+/* elementa-metadata
+title: Homepage
 */
 ```
 

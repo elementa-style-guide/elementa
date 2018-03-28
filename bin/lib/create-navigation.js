@@ -1,32 +1,45 @@
 const { cloneDeep } = require(`lodash`);
 
+function addToRoot({ element, schema }) {
+  let schemaItem = schema.find(({ slug }) => slug === element.slug);
+
+  if (!schemaItem) {
+    schemaItem = {};
+    schema.push(schemaItem);
+  }
+
+  Object.assign(schemaItem, {
+    route: element.route,
+    slug: element.slug,
+    title: element.title,
+  });
+}
+
+function addToParent({ element, schema }) {
+  element.parent.split(`.`).reduce((prev, parentKey, index, array) => {
+    const parentItem = prev.find(({ slug }) => slug === parentKey);
+
+    if (!parentItem.children) {
+      parentItem.children = [];
+    }
+
+    if (array.length === index + 1) {
+      parentItem.children.push({
+        route: element.route,
+        slug: element.slug,
+        title: element.title,
+      });
+    }
+
+    return parentItem.children;
+  }, schema);
+}
+
 module.exports = function createNavigation({ elementTree, schema }) {
-  return Object.keys(elementTree).reduce((x, elementKey) => {
-    const {
-      key,
-      parent,
-      route,
-      title,
-    } = elementTree[elementKey];
+  return elementTree.reduce((prev, element) => {
+    if (element.parent) addToParent({ element, schema: prev });
+    else addToRoot({ element, schema: prev });
 
-    parent.split(`.`).reduce((y, parentKey, index, array) => {
-      const parentItem = y[parentKey];
-
-      if (!parentItem.children) {
-        parentItem.children = {};
-      }
-
-      if (array.length === index + 1) {
-        // eslint-disable-next-line no-param-reassign
-        parentItem.children[key] = {
-          route,
-          title,
-        };
-      }
-
-      return parentItem.children;
-    }, x);
-
-    return x;
+    return prev;
   }, cloneDeep(schema));
 };

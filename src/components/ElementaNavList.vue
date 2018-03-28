@@ -1,8 +1,8 @@
 <template>
   <ul :class="$options.name">
     <li
-      v-for="(item, index) in items"
-      :key="index"
+      v-for="item in items"
+      :key="item.slug"
       :class="{
         [`${$options.name}__item`]: true,
         [`${$options.name}__item--subTitleItem`]: !item.route,
@@ -38,7 +38,7 @@ export default {
   name: `ElementaNavList`,
   props: {
     items: {
-      type: Object,
+      type: Array,
       required: true,
     },
   },
