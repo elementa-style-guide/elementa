@@ -13,6 +13,7 @@
         :class="`${$options.name}__title ${$options.name}__title--link`"
         :to="item.route"
         active-class="is-active"
+        exact
       >
         {{ item.title }}
       </router-link>
