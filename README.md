@@ -2,8 +2,6 @@
 
 Elementa is a Vue.js component style guide, built with Vue for Vue projects.
 
-**Warning:** this project is in a very early phase. You should not use it except to experiment with it, or if you want to contribute.
-
 ## Quick start
 
 ```bash
