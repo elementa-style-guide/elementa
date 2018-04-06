@@ -1,0 +1,3 @@
+# Files to ignore
+src/navigation.json
+src/router.js

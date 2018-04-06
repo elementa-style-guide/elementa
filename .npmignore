@@ -1,9 +1,0 @@
-assets
-coverage
-
-.editorconfig
-.eslintrc*
-*.spec.js
-*.tgz
-
-jest.config.js

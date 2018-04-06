@@ -10,7 +10,6 @@
     "sourceType": "module"
   },
   "extends": [
-    "plugin:vue/essential",
     "@avalanche/eslint-config"
   ]
 }

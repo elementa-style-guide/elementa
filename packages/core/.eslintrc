@@ -1,0 +1,6 @@
+{
+  "extends": [
+    "../../.eslintrc",
+    "plugin:vue/essential"
+  ]
+}
