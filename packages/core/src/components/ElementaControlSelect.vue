@@ -1,12 +1,11 @@
 <template>
   <select
-      :id="id"
-      :class="$options.name"
-      v-model="control.value"
-    >
-      <option v-for="option in control.options" :key="option">
-        {{ option }}
-      </option>
+    :class="$options.name"
+    v-model="control.value"
+  >
+    <option v-for="option in control.options" :key="option">
+      {{ option }}
+    </option>
   </select>
 </template>
 
@@ -14,9 +13,6 @@
 export default {
   name: `ElementaControlSelect`,
   props: {
-    id: {
-      type: String,
-    },
     control: {
       type: Object,
     },
