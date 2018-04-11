@@ -78,40 +78,6 @@ export default {
   &__label {
     margin-bottom: 0.25em;
   }
-
-  &__control {
-    display: block;
-    width: 100%;
-    height: $input-height;
-    padding: $input-padding-y $input-padding-x;
-    font-size: $font-size-base;
-    line-height: $input-line-height;
-    color: $input-color;
-    background-color: $input-bg;
-    background-clip: padding-box;
-    border: $input-border-width solid $input-border-color;
-
-    @if $enable-rounded {
-      border-radius: $input-border-radius;
-    } @else {
-      border-radius: 0;
-    }
-
-    @include box-shadow($input-box-shadow);
-    @include transition($input-transition);
-
-    &::-ms-expand {
-      background-color: transparent;
-      border: 0;
-    }
-
-    @include form-control-focus();
-
-    &::placeholder {
-      color: $input-placeholder-color;
-      opacity: 1;
-    }
-  }
 }
 
 /**
@@ -126,6 +92,45 @@ export default {
     &:not(:last-child) {
       margin-bottom: 0.75em;
     }
+  }
+}
+
+/**
+ * ElementaControlInput
+ * ElementaControlSelect
+ */
+.ElementaControlInput,
+.ElementaControlSelect {
+  display: block;
+  width: 100%;
+  height: $input-height;
+  padding: $input-padding-y $input-padding-x;
+  font-size: $font-size-base;
+  line-height: $input-line-height;
+  color: $input-color;
+  background-color: $input-bg;
+  background-clip: padding-box;
+  border: $input-border-width solid $input-border-color;
+
+  @if $enable-rounded {
+    border-radius: $input-border-radius;
+  } @else {
+    border-radius: 0;
+  }
+
+  @include box-shadow($input-box-shadow);
+  @include transition($input-transition);
+
+  &::-ms-expand {
+    background-color: transparent;
+    border: 0;
+  }
+
+  @include form-control-focus();
+
+  &::placeholder {
+    color: $input-placeholder-color;
+    opacity: 1;
   }
 }
 

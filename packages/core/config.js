@@ -34,9 +34,14 @@ const elementaWebpackConfig = {
     }),
   ],
 };
+const elementaControlsConfig = {
+  input: path.join(__dirname, `src/components/ElementaControlInput.vue`),
+  select: path.join(__dirname, `src/components/ElementaControlSelect.vue`),
+};
 
 const config = assign({}, {
   configureWebpack: {},
+  controls: {},
   elementSuffix: `ele`,
   navigationSchema: [
     {
@@ -51,5 +56,6 @@ const config = assign({}, {
 }, userConfig);
 
 config.configureWebpack = webpackMerge(elementaWebpackConfig, userConfig.configureWebpack);
+config.controls = assign({}, elementaControlsConfig, userConfig.controls);
 
 module.exports = config;
