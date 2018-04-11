@@ -3,6 +3,7 @@ const { spawn } = require(`child_process`);
 const path = require(`path`);
 const fs = require(`fs`);
 
+const createControlsUtil = require(`./lib/create-controls`);
 const createNavigationUtil = require(`./lib/create-navigation`);
 const createRouterUtil = require(`./lib/create-router`);
 const elementPathsUtil = require(`./lib/element-paths`);
@@ -14,6 +15,7 @@ const config = require(`../config`);
 
 config.paths.src = config.paths.src.replace(`<rootDir>`, config.paths.root);
 
+const controls = createControlsUtil({ controls: config.controls, root: config.paths.root });
 const elementPaths = elementPathsUtil({
   src: config.paths.src,
   suffix: config.elementSuffix,
@@ -24,6 +26,14 @@ const navigation = createNavigationUtil({
   elementTree,
   schema: config.navigationSchema,
 });
+
+fs.writeFileSync(
+  path.resolve(__dirname, `..`, `src`, `controls.js`),
+  controls,
+  { encoding: `utf8` },
+);
+// eslint-disable-next-line no-console
+console.log(`controls.js created`);
 
 fs.writeFileSync(
   path.resolve(__dirname, `..`, `src`, `router.js`),

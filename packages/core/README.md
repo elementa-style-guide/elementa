@@ -23,6 +23,7 @@ module.exports = {
   // Add custom webpack configuration.
   // See: https://github.com/vuejs/vue-cli/blob/dev/docs/webpack.md
   configureWebpack: {},
+  controls: {},
   elementSuffix: 'ele',
   // Define your navigation schema.
   navigationSchema: [
@@ -107,7 +108,7 @@ export default {
       controls: {
         text: {
           label: 'Text',
-          type: 'text',
+          type: 'input',
           value: 'Button',
         },
         size: {
@@ -164,7 +165,20 @@ You have to restart Elementa after modifying the metadata of an Element for the 
 
 ## Controls
 
-Currently only Controls of type `text` and `select` are supported, more to come.
+By default Elementa provides two basic control types: `input` and `select`. There will be more control types in the future.
+
+Controls are regular Vue.js components. You can provide your own control types via the configuration.
+
+```js
+// elementa.config.js
+module.exports = {
+  controls: {
+    myControl: 'src/components/MyControl.vue',
+  },
+};
+```
+
+You can take a look at the implementations of [the input control](https://github.com/elementa-style-guide/elementa/blob/master/packages/core/src/components/ElementaControlInput.vue) or the [select](https://github.com/elementa-style-guide/elementa/blob/master/packages/core/src/components/ElementaControlSelect.vue) to see how to build your own custom controls.
 
 ## Theming
 

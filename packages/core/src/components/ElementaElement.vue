@@ -11,10 +11,5 @@
 <script>
 export default {
   name: `ElementaElement`,
-  props: {
-    controls: {
-      type: Object,
-    },
-  },
 };
 </script>
