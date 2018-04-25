@@ -1,2 +1,3 @@
 node_modules
+packages/core/src/controls.js
 packages/core/src/router.js

@@ -20,6 +20,7 @@ export default {
       return `${this.control.type}Control`;
     },
     id() {
+      // eslint-disable-next-line no-underscore-dangle
       return `control-${this._uid}`;
     },
   },
