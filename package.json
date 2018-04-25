@@ -10,6 +10,8 @@
     "lint:scripts-md": "eslint --config .eslintrc-md.json --ext md .",
     "lint:scripts-md-vue": "eslint --config .eslintrc-md-vue.json --ext md .",
     "lint": "npm run lint:scripts && npm run lint:scripts-md && npm run lint:scripts-md-vue",
+    "coverage": "jest --coverage --maxWorkers=4",
+    "coveralls": "npm run coverage && cat coverage/lcov.info | coveralls",
     "test": "jest"
   },
   "devDependencies": {
@@ -20,6 +22,7 @@
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^8.2.2",
     "babel-jest": "^22.4.3",
+    "coveralls": "^3.0.0",
     "eslint": "^4.19.1",
     "eslint-plugin-import": "^2.10.0",
     "eslint-plugin-markdown": "^1.0.0-beta.6",
