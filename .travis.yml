@@ -4,7 +4,7 @@ node_js:
   - "9"
   - "node"
 script:
-  - npm run bootstrap
-  - npm run lint
-  - npm test -- --maxWorkers=4
-  - npm run coveralls
+  - yarn run bootstrap
+  - yarn run lint
+  - yarn test -- --maxWorkers=4
+  - yarn run coveralls

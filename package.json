@@ -9,9 +9,9 @@
     "lint:scripts": "eslint --ext .js,.vue .",
     "lint:scripts-md": "eslint --config .eslintrc-md.json --ext md .",
     "lint:scripts-md-vue": "eslint --config .eslintrc-md-vue.json --ext md .",
-    "lint": "npm run lint:scripts && npm run lint:scripts-md && npm run lint:scripts-md-vue",
+    "lint": "yarn run lint:scripts && yarn run lint:scripts-md && yarn run lint:scripts-md-vue",
     "coverage": "jest --coverage --maxWorkers=4",
-    "coveralls": "npm run coverage && cat coverage/lcov.info | coveralls",
+    "coveralls": "yarn run coverage && cat coverage/lcov.info | coveralls",
     "test": "jest"
   },
   "devDependencies": {
@@ -33,8 +33,7 @@
     "vue-jest": "^2.5.0"
   },
   "engines": {
-    "node": ">= 8.9.0",
-    "npm": ">= 5.5.1"
+    "node": ">=8"
   },
   "repository": {
     "type": "git",
